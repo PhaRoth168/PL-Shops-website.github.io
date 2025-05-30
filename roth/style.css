@@ -1,0 +1,259 @@
+html {
+    scroll-behavior: smooth; /* សម្រាប់ scroll រលូននៅពេលចុច link */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #a07a5f; /* ពណ៌ background មូលដ្ឋាន */
+    color: #333;
+}
+
+header {
+    background-color: #5d3f2a; /* ពណ៌ត្នោតចាស់សម្រាប់ header */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* ធ្វើឲ្យ header ជាប់ពីលើ */
+    top: 0; /* ជាប់នៅផ្នែកខាងលើ */
+    z-index: 1000; /* ធានាថាវាស្ថិតនៅពីលើ content ផ្សេងទៀត */
+}
+
+/* នេះជាចំណុចគន្លឹះដែលធ្វើឲ្យ logo នៅខាងឆ្វេង */
+.logo {
+    margin-right: auto; /* នេះរុញធាតុផ្សេងទៀត (navigation) ទៅខាងស្តាំ */
+    height: auto; /* រក្សាកម្ពស់ដើមរបស់ logo image */
+}
+
+nav {
+    display: flex; /* ប្រើ flexbox សម្រាប់ប្លង់ */
+    justify-content: space-between; /* ញែក logo ទៅឆ្វេង និង menu ទៅស្តាំ */
+    align-items: center; /* តម្រឹមធាតុតាមកណ្តាលបញ្ឈរ */
+    max-width: 1200px;
+    margin: 0 auto; /* តម្រឹមកណ្តាល nav ក្នុង width 1200px */
+    padding: 0 20px;
+}
+
+/* មិនមាន h1 នៅក្នុង nav ទៀតទេ អាចលុបចោលបាន */
+/* nav h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 28px;
+} */
+
+nav ul {
+    list-style: none; /* លុប bullet points ចេញពី list */
+    margin: 0;
+    padding: 0;
+    display: flex; /* ធ្វើឲ្យ list items រៀបជាជួរដេក */
+}
+
+nav ul li {
+    margin-left: 30px; /* ចន្លោះរវាង menu items */
+}
+
+nav ul li a {
+    color: #fff; /* ពណ៌អក្សរស */
+    text-decoration: none; /* លុប underline */
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease; /* ធ្វើឲ្យការផ្លាស់ប្តូរពណ៌រលូន */
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* ពណ៌មាសនៅពេល hover */
+}
+
+/* Common styles for all sections to maintain background and padding */
+.main-section {
+    /* ខ្ញុំបានកែ min-height នេះបន្តិច។ ប្រសិនបើ header របស់អ្នកមានកម្ពស់ថេរ 80px គឺមិនអីទេ។
+       តែប្រសិនបើ header មានការផ្លាស់ប្តូរទំហំ គួរគិតពីវិធីសាស្ត្រផ្សេង។ */
+    min-height: calc(100vh - 80px); /* កម្ពស់អប្បបរមា (screen height - header height) */
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* រួមបញ្ចូល padding នៅក្នុង width/height សរុប */
+}
+
+/* --- Home Section Styles --- */
+#home-section {
+    background-color: #a07a5f; /* ពណ៌ដូច body background */
+}
+
+.hero-section {
+    display: flex; /* ប្រើ flexbox សម្រាប់ image និង content */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* ស្រមោលខ្លាំងជាងមុន */
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+}
+
+.hero-image-container {
+    flex: 1;
+    min-width: 350px;
+    background-color: #5d3f2a; /* ពណ៌ត្នោតចាស់សម្រាប់ background រូបភាព */
+    padding: 20px; /* គម្លាតជុំវិញរូបភាព */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: auto; /* រក្សាសមាមាត្ររូបភាព */
+    display: block;
+    border-radius: 5px;
+}
+
+.hero-content {
+    flex: 1.5;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    color: #5d3f2a; /* ពណ៌ត្នោតចាស់សម្រាប់ចំណងជើង */
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.order-button {
+    display: inline-block;
+    background-color: #ff8c00; /* ពណ៌ទឹកក្រូច */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.order-button:hover {
+    background-color: #e07b00; /* ពណ៌ទឹកក្រូចចាស់ពេល hover */
+}
+
+/* --- Menu Section Styles --- */
+#menu-section {
+    background-color: #a07a5f; /* ពណ៌ដូច body background */
+    flex-direction: column; /* តម្រូវឲ្យ contents រៀបជាជួរពីលើចុះក្រោម */
+}
+
+.section-title {
+    font-size: 38px;
+    color: #5d3f2a;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.menu-content-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.menu-items {
+    display: grid; /* ប្រើ Grid សម្រាប់ប្លង់ menu cards */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* កំណត់ទំហំ card ឲ្យត្រូវតាម screen */
+    gap: 30px; /* ចន្លោះរវាង cards */
+    margin: 0 auto;
+}
+
+.menu-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px); /* ងើបឡើងបន្តិចពេល hover */
+}
+
+.menu-card img {
+    width: 100%;
+    height: 180px; /* កម្ពស់ថេរសម្រាប់រូបភាព */
+    object-fit: cover; /* ធានាថារូបភាពពេញកន្លែង */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.menu-card h4 {
+    font-size: 22px;
+    color: #5d3f2a;
+    margin-bottom: 8px;
+}
+
+.menu-card p {
+    font-size: 17px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* --- Contact Section Styles --- */
+#contact-section {
+    background-color: #a07a5f; /* ពណ៌ដូច body background */
+}
+
+.contact-content-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact-info-section {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+.contact-info-card,
+.get-in-touch-card {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+.contact-info-card {
+    background-color: #5d3f2a; /* ពណ៌ត្នោតចាស់សម្រាប់ contact info card */
+    color: #fff;
+}
+
+.contact-info-card h2,
+.get-in-touch-card h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact-info-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.contact-info-card p strong {
+    color: #ffd700; /* ពណ៌មាសសម្រាប់លេខទូរស័ព្ទ */
+}
